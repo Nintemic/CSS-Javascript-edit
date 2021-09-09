@@ -1,0 +1,24 @@
+$(function () {
+   //using alias
+   var total = document.getElementById("element_1");
+    //enable On Field Exit
+    EFormScripting.enabledOnFieldExit = true;
+
+    //On field exit function
+    EFormScripting.onFieldExit = function (field_id, field_value) {
+
+        if ((field_id == total.id) && (field_value < 0)) {
+            $("#" + total.id).css({
+                "text-align": "right",
+                "background-color": "pink"
+            });
+        } else {
+            $("#" + total.id).css({
+                "text-align": "right",
+                "background-color": "lime"
+            });
+        }
+    }
+    // Register custom script.  Do not remove.
+    EFormScripting.registeredCustomEvent();
+})
